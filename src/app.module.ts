@@ -8,16 +8,20 @@ import { ConsoleModule } from 'nestjs-console';
   imports: [
     ConsoleModule,
     ConfigModule.forRoot({
-      isGlobal: true,
-      envFilePath: `../.env.${process.env.NODE_ENV}`
+      isGlobal: true
     }),
     MongooseModule.forRootAsync({
       useFactory: (configService: ConfigService) => ({
-        uri: process.env.DATABASE_URL
+        uri: configService.get('DATABASE_URL')
       }),
       inject: [ConfigService],
     }),
     RestaurantModule
   ],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(private readonly configService: ConfigService) {
+    console.log("AppModule");
+    console.log(configService.get('DATABASE_URL'));
+  };
+}

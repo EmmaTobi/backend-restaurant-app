@@ -7,10 +7,12 @@ services:
     ports:
       - "3000:3000"
     env_file:
-      - .env.prod
-    command: ["sh", "-c", "npm run console import-restaurants && npm run start"]
+      - .env.development
+    command: ["sh", "-c", "npm run console:dev import-restaurants && npm run start:dev"]
     depends_on:
       - mongodb
+    volumes:
+      - ./:/usr/src/app
 
   mongodb:
     image: mongo
