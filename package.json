@@ -6,9 +6,9 @@
   "private": true,
   "license": "UNLICENSED",
   "scripts": {
-    "build": "export NODE_ENV=prod && nest build",
+    "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "export NODE_ENV=prod && nest start",
+    "start": "nest start",
     "start:dev": "export NODE_ENV=development && nest start --watch",
     "start:debug": "export NODE_ENV=development && nest start --debug --watch",
     "start:prod": "export NODE_ENV=prod && node dist/main",
@@ -18,9 +18,8 @@
     "test:cov": "export NODE_ENV=test && jest --coverage",
     "test:debug": "export NODE_ENV=test && node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "console:dev": "export NODE_ENV=development && ts-node -r tsconfig-paths/register src/console.ts",
-    "console": "export NODE_ENV=prod && node dist/console.js",
-    "deploy": "npm install && npm run build && && npm run start"
+    "console:dev": "ts-node -r tsconfig-paths/register src/console.ts",
+    "console": "node dist/console.js"
   },
   "dependencies": {
     "@nestjs/axios": "^3.0.0",
