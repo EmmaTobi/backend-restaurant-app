@@ -42,6 +42,12 @@ docker-compose down
 - Assuming BASE_URL=localhost and PORT=3000
 - Navigate to http://BASE_URL:PORT/api# to view the swagger docs
 
+### Tests
+- To run the tests
+```bash
+npm test
+```
+
 ### Extras
 - To test on an already deployed running instance of this app deployed on AWS
 - Go to `http://restaurant-app-lb-138523068.us-east-1.elb.amazonaws.com:3000/api/` to see the swagger docs.
