@@ -11,8 +11,6 @@ services:
     command: ["sh", "-c", "npm run console:dev import-restaurants && npm run start:dev"]
     depends_on:
       - mongodb
-    volumes:
-      - ./:/usr/src/app
 
   mongodb:
     image: mongo

@@ -4,10 +4,6 @@ WORKDIR /usr/src/app
 
 RUN npm install -g @nestjs/cli
 
-RUN npm install -g ts-node
-
-RUN npm install -g tsconfig-paths
-
 COPY package*.json .
 
 RUN npm install
