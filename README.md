@@ -43,5 +43,5 @@ docker-compose down
 - Navigate to http://BASE_URL:PORT/api# to view the swagger docs
 
 ### Extras
-- To test on an already deployed running instance of this app
-- Go to `http://ec2-3-83-163-119.compute-1.amazonaws.com:3000/api` to see the swagger docs.
+- To test on an already deployed running instance of this app deployed on AWS
+- Go to `http://restaurant-app-lb-138523068.us-east-1.elb.amazonaws.com:3000/api/` to see the swagger docs.
